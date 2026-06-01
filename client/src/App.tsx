@@ -3,9 +3,10 @@ import { useEffect, useState } from 'react';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import { getAuthUser } from './utils/auth';
+import { UserProfile } from './types';
 
 function App() {
-  const [user, setUser] = useState<{ full_name: string; role: string } | null>(null);
+  const [user, setUser] = useState<UserProfile | null>(null);
   const navigate = useNavigate();
 
   useEffect(() => {
