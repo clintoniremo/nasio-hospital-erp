@@ -19,8 +19,12 @@ const fallbackUsers = [
 
 async function findUserByEmail(email: string) {
   if (pool) {
-    const result = await pool.query('SELECT id, full_name, email, password_hash, role FROM users WHERE email = $1', [email]);
-    return result.rows[0];
+    try {
+      const result = await pool.query('SELECT id, full_name, email, password_hash, role FROM users WHERE email = $1', [email]);
+      if (result && result.rows && result.rows.length) return result.rows[0];
+    } catch (err) {
+      // ignore and fall back to in-memory users
+    }
   }
 
   return fallbackUsers.find((user) => user.email === email) || null;
