@@ -42,13 +42,20 @@ A full-stack Hospital ERP system built with React, Node.js, and PostgreSQL.
 
 ## Demo Credentials
 
-- Reception: `reception@hospital.local` / `reception123`
-- Nurse: `nurse@hospital.local` / `nurse123`
-- SHA: `sha@hospital.local` / `sha123`
-- Doctor: `doctor@hospital.local` / `doctor123`
-- Lab: `lab@hospital.local` / `lab123`
-- Finance: `finance@hospital.local` / `finance123`
-- Pharmacy: `pharmacy@hospital.local` / `pharmacist123`
+- Super Admin: `superadmin@hospital.local` / `superadmin123`
+- Reception Admin: `reception@hospital.local` / `reception123`
+- Triage Nurse: `nurse@hospital.local` / `nurse123`
+- SHA Coordinator: `sha@hospital.local` / `sha123`
+- Consulting Doctor: `doctor@hospital.local` / `doctor123`
+- Lab Technician: `lab@hospital.local` / `lab123`
+- Finance Officer: `finance@hospital.local` / `finance123`
+- Pharmacy Agent: `pharmacy@hospital.local` / `pharmacy123`
+
+## Running without Postgres (demo mode)
+
+- If `DATABASE_URL` is not set in `server/.env`, the server uses an in-memory fallback store so basic auth and core endpoints work for demos and deployment on Vercel.
+
+For full functionality (reports, persistence), follow the PostgreSQL instructions above and run `node server/scripts/initDb.js` after creating the database.
 
 ## Development
 
