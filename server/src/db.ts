@@ -3,11 +3,8 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const connectionString = process.env.DATABASE_URL;
-if (!connectionString) {
-  throw new Error('DATABASE_URL is required in .env');
-}
+const connectionString = process.env.DATABASE_URL || '';
 
-export const pool = new Pool({
-  connectionString,
-});
+export const pool = connectionString
+  ? new Pool({ connectionString })
+  : null;
