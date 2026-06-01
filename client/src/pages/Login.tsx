@@ -39,9 +39,9 @@ export default function Login({ onLogin }: LoginProps) {
             <div className="video-overlay" />
             <div className="overlay-content">
               <div className="brand">
-                <div className="logo-mark">N</div>
+                <div className="logo-mark">G</div>
                 <div>
-                  <h2>Nasio.io</h2>
+                  <h2>GMK.io</h2>
                   <p>Hospital ERP reimagined.</p>
                 </div>
               </div>
@@ -56,7 +56,7 @@ export default function Login({ onLogin }: LoginProps) {
         <div className="right-panel">
           <form onSubmit={handleSubmit} className="login-form">
             <div className="form-title">
-              <h3>Sign in to Nasio</h3>
+              <h3>Sign in to GMK</h3>
               <p className="muted">Access patient flow and payment management.</p>
             </div>
 
